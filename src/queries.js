@@ -10,4 +10,22 @@ export const HOME_PAGE = gql`
       medium_cover_image
     }
   }
-`
+`;
+
+export const MOVIE_DETAILS = gql`
+query getMovieDetails($movieId: Int!) {
+  movie(id: $movieId) {
+    medium_cover_image
+    title
+    rating
+    description_intro
+    language
+  }
+  suggestions(id:$movieId) {
+    id
+    medium_cover_image
+    title
+    rating
+  }
+}
+`;
